@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!--font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <title>TOPICO</title>
+</head>
+
+<body>
+    <!-- Header---------------------------------------- -->
+    <header>
+        <div class="container top-nav">
+            <a href="home.html" class="logo"><img src="img/logo-black.png" alt=""></a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search For Products...">
+                <button type="submit">Search</button>
+            </form>
+            <div style="color: var(--dark-color); padding: 10px 20px; margin-left: 10px; border-radius: 5px; display: flex; gap: 10px;">
+                <div class="wishlist-header">
+                    <div class="icon-wishlist" onclick="openWishlist()">
+                        <i class="fa-solid fa-heart"></i>
+                        <span class="fav-count-item">0</span>
+                    </div>
+                </div>
+
+                <div class="cart-header">
+                    <div class="icon-cart" onclick="openCart()">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="count-item">0</span>
+                    </div>
+                    <div class="total-price">
+                        <p>my Cart:</p>
+                        <p class="price_cart_Head">0EGP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="links container">
+                <i onclick="open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+                <ul id="menu">
+                    <span onclick="close_menu()" class="bg-overlay"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                    <img class="logo_menu" src="img/logo-black.png" alt="">
+                    <li class="active"><a href="home.html"><b>Home</b></a></li>
+                    <li><a href="all_products.html"><b>All Products</b></a></li>
+                    <li><a href=""><b>About Us</b></a></li>
+                    <li><a href=""><b>Contact</b></a></li>
+                </ul>
+                <div class="login_signUp">
+                    <a href="login.html" onclick="logout()">Log Out<i class="fa-solid fa-right-to-bracket"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- --------------------------------------cart -->
+    <div class="cart">
+        <div class="top_cart">
+            <h3>My Cart <span class="count_item_cart">(0 items in cart)</span></h3>
+            <span class="close_cart" onclick="closeCart()"><i class="fa-solid fa-x"></i></span>
+        </div>
+        <div class="items_in_cart">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="bottom_cart">
+            <div class="total">
+                <p>Cart Sub Total</p>
+                <p class="price_cart_total">0EGP</p>
+            </div>
+            <div class="button_cart">
+                <a href="checkout.html" class="btn_cart" onclick="goToCheckout()">Proceed to Checkout</a>
+                <button class="btn_cart trans_bg">Shop More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wishlist">
+        <div class="top_wishlist">
+            <h3>My Wishlist <span class="count_item_wishlist">(0 items)</span></h3>
+            <span class="close_wishlist" onclick="closeWishlist()"><i class="fa-solid fa-x"></i></span>
+        </div>
+        <div class="items_in_wishlist">
+            <!-- Wishlist items will be dynamically added here -->
+        </div>
+        <div class="bottom_wishlist">
+            <button class="btn_clear_all" onclick="clearWishlist()">Clear All</button>
+        </div>
+    </div>
+
+    <div class="item_detail" id="item_detail">
+        <!-- Item details will be dynamically added here -->
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <i class="fa-solid fa-headset"></i>
+                <img src="img/logo-white.png">
+                <div class="hotline">
+                    <div class="text" id="contact">
+                        <h5>Hotline Free 24/24:</h5>
+                        <h6>+201068767403</h6>
+                    </div>
+                </div>
+                <p>
+                    Our application is designed to streamline and enhance your experience with household 
+                    appliances, making it easier than ever to monitor, control, and maintain all your devices 
+                    from one convenient platform. With a user-friendly interface and cutting-edge technology, 
+                     our mission is to simplify your life by providing a seamless and efficient way to manage 
+                     your home, ensuring comfort, convenience, and peace of mind. Join us in revolutionizing 
+                     the way you interact with your home appliances.
+               </p>
+            </div>
+            <div class="row">
+                <h4>FAQs & Help</h4>
+                <div class="links">
+                    <a href="#">F.A.Q.'S</a>
+                    <a href="#">Order Tracking</a>
+                    <a href="#">Contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Payment & Shipping</a>
+                    <a href="#">Estimated Delivery Time</a>
+                    <a href="#">Shipping Guide</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Information</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Our Service</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="back_to_top">
+            <p>Back To Top</p>
+        </div>
+        <div class="bottom_footer">
+            <div class="container">
+                <p>Copy Right &copy; <span>TOPICO</span> All Rights Reserved</p>
+                <div class="payment_img">
+                    <img src="img/payment-1.png">
+                    <img src="img/payment-2.png">
+                    <img src="img/payment-3.png">
+                    <img src="img/payment-4.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/items_home.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/item.js"></script>
+    <script src="crud/js/js.js"></script>
+    <script>
+        function logout() {
+            localStorage.removeItem('currentUser'); // Remove current user data
+            window.location.href = 'login.html'; // Redirect to the login page
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to add item to cart
+            function add_to_cart(productId, button) {
+                // Fetch the cart from local storage or initialize an empty array if not found
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                // Fetch the product data from local storage
+                const productData = JSON.parse(localStorage.getItem('ProductData'));
+                const product = productData.find(item => item.id === String(productId));
+
+                // Check if product exists in the data
+                if (product) {
+                    // Check if the product already exists in the cart
+                    const existingProduct = cart.find(item => item.id === productId);
+
+                    if (existingProduct) {
+                        // If it exists, increase the quantity
+                        existingProduct.quantity += 1;
+                    } else {
+                        // If not, add the product to the cart with a quantity of 1
+                        cart.push({ ...product, quantity: 1 });
+                    }
+
+                    // Save the updated cart to local storage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+
+                    // Update the cart display
+                    updateCartDisplay();
+                } else {
+                    console.error(`Product with id ${productId} not found.`);
+                }
+            }
+
+            // Function to update cart display
+            function updateCartDisplay() {
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const cartCountElement = document.querySelector('.count-item');
+                const cartTotalElement = document.querySelector('.price_cart_Head');
+
+                // Calculate the total item count and total price
+                const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
+                const totalPrice = cart.reduce((total, item) => total + item.quantity * item.price, 0);
+
+                // Update the cart count and total price in the UI
+                cartCountElement.textContent = itemCount;
+                cartTotalElement.textContent = `${totalPrice}EGP`;
+            }
+
+            // Add event listeners to Add to Cart buttons
+            const addToCartButtons = document.querySelectorAll('button[onclick^="add_to_cart"]');
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function (event) {
+                    const productId = parseInt(button.getAttribute('onclick').match(/\d+/)[0]);
+                    add_to_cart(productId, button);
+                    event.preventDefault(); // Prevent default button action
+                });
+            });
+
+            // Initial update of the cart display
+            updateCartDisplay();
+        });
+    </script>
+</body>
+
+</html>

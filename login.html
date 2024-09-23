@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login_regs.css">
+    <!--font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+
+    <title>Log In</title>
+</head>
+
+<body>
+    <!-- Header----------------------------------------
+     ---------------------------------------------------->
+    <header>
+        <div class="container top-nav">
+            <a href="home.html" class="logo"><img src="img/logo-black.png" alt=""></a>
+           
+        </div>
+      
+    </header>
+    <!--------------------------------------cart
+    ------------------------------------------------------------------------------------------------->
+    
+
+
+    
+
+  
+    
+    <section class="signin sec_form">
+        <div class="form_container">
+            <p class="title">Welcome back</p>
+            <form class="form" id="loginForm">
+                <input type="email" id="emailInput" placeholder="Email" required>
+                <input type="password" id="passwordInput" placeholder="Password" required>
+                <p class="page-link">
+                    <a href="#" class="page-link-label">Forgot Password?</a>
+                </p>
+                <button type="submit" class="form-btn" >Login</button>
+            </form>
+            <p class="sign-up-label">
+                Don't have an account? <a href="signup.html" class="sign-up-link">Sign up</a>
+            </p>
+        </div>
+    </section>
+    
+    
+    
+    
+
+
+
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <i class="fa-solid fa-headset"></i>
+                <img src="img/logo-white.png">
+                <div class="hotline">
+                    <div class="text">
+                        <h5>Hotline Free 24/24:</h5>
+                        <h6>+201068767403</h6>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                    explicabo nisi cum nobis, aspernatur, autem adipisci expedita doloremque magni inventor laboriosam.
+                    Veniam eaque reiciendis placeat voluptate similique ut quos esse.</p>
+            </div>
+            <div class="row">
+                <h4>FAQs & Help</h4>
+                <div class="links">
+                    <a href="#">F.A.Q.'S</a>
+                    <a href="#">Oredering Tracking</a>
+                    <a href="#">contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Payment & Shipping</a>
+                    <a href="#">Estimated Delivery Time</a>
+                    <a href="#">Shipping Guide</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Information</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Our service</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom_footer">
+            <div class="container">
+                <p>Copy Right &copy; <span>TOPICO</span> All Rights Reserved</p>
+                <div class="payment_img">
+                    <img src="img/payment-1.png">
+                    <img src="img/payment-2.png">
+                    <img src="img/payment-3.png">
+                    <img src="img/payment-4.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        //log in
+//     document.getElementById('loginForm').addEventListener('submit', function(event) {
+//     event.preventDefault();
+//     const username = event.target.username.value;
+//     const password = event.target.password.value;
+
+    
+//     if (username === 'admin' && password === 'admin123') {
+//         localStorage.setItem('userRole', 'admin');
+//         localStorage.setItem('username', 'admin');
+//         window.location.href = 'admin.html';
+//     } else if (username === 'user' && password === 'user123') {
+//         localStorage.setItem('userRole', 'user');
+//         localStorage.setItem('username', 'user');
+//         window.location.href = 'userdashboard.html';
+//     } else {
+//         alert('Invalid credentials');
+//     }
+// });
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting in the traditional way
+            window.location.href = "home.html"; // Redirect to home.html
+        });
+ 
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/all_products.js"></script>
+   
+</body>
+
+</html>

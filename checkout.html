@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!--font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <title>TOPICO</title>
+</head>
+
+<body>
+    <!-- Header----------------------------------------
+     ---------------------------------------------------->
+    <header>
+        <div class="container top-nav">
+            <a href="home.html" class="logo"><img src="img/logo-black.png" alt=""></a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search For Products...">
+                <button type="submit">Search</button>
+            </form>
+            <div style="color: var(--dark-color);
+                        padding: 10px 20px;
+                        margin-left: 10px;
+                        border-radius: 5px;
+                        display: flex;
+                        gap: 10px;">
+                <div class="wishlist-header">
+                    <div class="icon-wishlist" onclick="openWishlist()">
+                        <i class="fa-solid fa-heart"></i>
+                        <span class="fav-count-item">0</span>
+                    </div>
+                </div>
+
+                <div class="cart-header">
+                    <div class="icon-cart" onclick="openCart()">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="count-item">0</span>
+                    </div>
+                    <div class="total-price">
+                        <p>my Cart:</p>
+                        <p class="price_cart_Head">0EGP</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <nav>
+            <div class="links container">
+                <i onclick=" open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+                <ul id="menu">
+                    <span onclick="close_menu()" class="bg-overlay"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                    <img class="logo_menu" src="img/logo-black.png" alt="">
+                    <li class="active"><a href="home.html"><b>Home</b></a></li>
+                    <li><a href=""><b>All Products</b></a></li>
+                    <li><a href=""><b>About Us</b></a></li>
+                    <li><a href=""><b>Contact</b></a></li>
+                </ul>
+                <div class="login_signUp">
+                    <a href="login.html" onclick="logout()">Log Out<i class="fa-solid fa-right-to-bracket"></i></a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <!--------------------------------------cart
+    ------------------------------------------------------------------------------------------------->
+    <div class="cart ">
+        <div class="top_cart">
+            <h3>My Cart <span class="count_item_cart">(0item in cart)</span></h3>
+            <span class="close_cart" onclick="closeCart()"><i class="fa-solid fa-x"></i></span>
+        </div>
+        <div class="items_in_cart">
+
+        </div>
+
+
+        <div class="bottom_cart">
+            <div class="total">
+                <p>Cart Sub Total</p>
+                <p class="price_cart_total">0LE</p>
+            </div>
+            <div class="button_cart">
+                <a href="#" class="btn_cart">Proceed to Checkout</a>
+                <button class="btn_cart trans_bg">Shop More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wishlist">
+        <div class="top_wishlist">
+            <h3>My Wishlist <span class="count_item_wishlist">(0 items)</span></h3>
+            <span class="close_wishlist" onclick="closeWishlist()"><i class="fa-solid fa-x"></i></span>
+        </div>
+        <div class="items_in_wishlist">
+            <!-- Wishlist items will be dynamically added here -->
+        </div>
+        <div class="bottom_wishlist">
+            <button class="btn_clear_all" onclick="clearWishlist()">Clear All</button>
+        </div>
+    </div>
+
+    <section class="checkout">
+        <div class="container">
+            <form action="">
+                <div class="address">
+                    <h2>Delivery address</h2>
+                    <div class="inputs">
+                        <label>Email</label>
+                        <input type="email" placeholder="write your email">
+                        <label>name</label>
+                        <input type="text" placeholder="write your name">
+                        <label>address</label>
+                        <input type="text" placeholder="write your address">
+                        <label>phone</label>
+                        <input type="number" placeholder="write your number">
+                    </div>
+                </div>
+                <div class="coupon">
+                    <h2>Coupon Code</h2>
+                    <div class="inputs">
+                        <label for=""></label>
+                        <input type="text">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="ordersummary">
+            <h1>order summary</h1>
+            <div class="items" id="checkout-items">
+                <div class="item_card">
+                    <!-- <img src="img/product/product-1.jpg" alt="">
+                    <div class="centent">
+                        <h4>Original Mobile Android Dual SIM Smart Phone G3</h4>
+                        <p class="price_cart">Price : <span>$185</span></p>
+                    </div> -->
+                    <!-- /* to be added using js*/ -->
+                </div>
+            </div>
+            <div class="total">
+                <p>total Price</p>
+                <span id="checkout-total-price">$0</span>
+            </div>
+            <div class="button_div">
+                <button onclick="placeOrder()">place order</button>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <i class="fa-solid fa-headset"></i>
+                <img src="img/logo-white.png">
+                <div class="hotline">
+                    <div class="text">
+                        <h5>Hotline Free 24/24:</h5>
+                        <h6>+201068767403</h6>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim,
+                    explicabo nisi cum nobis, aspernatur, autem adipisci expedita doloremque magni inventor laboriosam.
+                    Veniam eaque reiciendis placeat voluptate similique ut quos esse.</p>
+            </div>
+            <div class="row">
+                <h4>FAQs & Help</h4>
+                <div class="links">
+                    <a href="#">F.A.Q.'S</a>
+                    <a href="#">Oredering Tracking</a>
+                    <a href="#">contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Payment & Shipping</a>
+                    <a href="#">Estimated Delivery Time</a>
+                    <a href="#">Shipping Guide</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Information</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Our service</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom_footer">
+            <div class="container">
+                <p>Copy Right &copy; <span>TOPICO</span> All Rights Reserved</p>
+                <div class="payment_img">
+                    <img src="img/payment-1.png">
+                    <img src="img/payment-2.png">
+                    <img src="img/payment-3.png">
+                    <img src="img/payment-4.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkoutItemsContainer = document.getElementById('checkout-items');
+            const checkoutTotalPrice = document.getElementById('checkout-total-price');
+
+            let currentUser = localStorage.getItem('currentUser');
+            let usersData = JSON.parse(localStorage.getItem('usersData')) || [];
+            let cartItems = [];
+
+            if (currentUser) {
+                const userData = usersData.find(user => user.email === currentUser);
+                cartItems = userData ? userData.cart : [];
+            }
+
+            let totalPrice = 0;
+
+            cartItems.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                totalPrice += itemTotal;
+
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item_card');
+                itemElement.innerHTML = `
+            <img src="${item.img}" alt="${item.name}">
+            <div class="content">
+                <h4>${item.name}</h4>
+                <p class="price_cart">Price: <span>${item.price} EGP</span></p>
+                <p class="quantity">Quantity: ${item.quantity}</p>
+                <p class="item-total">Total: ${itemTotal} EGP</p>
+            </div>
+        `;
+                checkoutItemsContainer.appendChild(itemElement);
+            });
+
+            checkoutTotalPrice.innerText = `${totalPrice} EGP`;
+        });
+
+        function placeOrder() {
+            if (currentUser2) {
+                product_cart = []; // Clear the cart array
+                updateLocalStorage(); // Update the localStorage with the cleared cart
+                getCartItem(); // Refresh the cart UI
+                alert('Order placed successfully!');
+            } else {
+                console.log("No user is currently logged in.");
+            }
+
+        }
+        function logout() {
+            localStorage.removeItem('currentUser'); // Remove current user data
+            window.location.href = 'login.html'; // Redirect to the login page
+        }
+    </script>
+    <script src="js/main.js"></script>
+    <script src="js/all_products.js"></script>
+</body>
+
+</html>

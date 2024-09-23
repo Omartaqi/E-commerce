@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Filter</title>
+</head>
+<body>
+    <!-- Sample product list -->
+    <div id="product-list">
+        <div class="product" data-category="Iphone" data-brand="Samsung">iPhone by Samsung</div>
+        <div class="product" data-category="Phones" data-brand="Sony">Sony Phone</div>
+        <!-- Add more products here -->
+    </div>
+
+    <!-- Filter options -->
+    <label>
+        <input type="checkbox" class="filter-checkbox" data-filter="category" data-value="Iphone"> Iphone
+    </label>
+    <label>
+        <input type="checkbox" class="filter-checkbox" data-filter="category" data-value="Phones"> Phones
+    </label>
+    <!-- Add more filter options here -->
+
+    <script>
+      fetch('js/items.json')
+    .then(response => response.json())
+    .then(data => {
+        const products_dev = document.getElementById('products_dev');
+        all_products_json = data;
+
+        // Assuming productId is the id of the product you want to fetch
+        const productId = 1; // Replace with the desired product id
+
+        // Find the product by id
+        const product = all_products_json.find(item => item.id === productId);
+
+        if (product) {
+            const old_price_paragraph = product.old_price ? `<p class="old_price">${product.old_price}EGP</p>` : "";
+            const percentDiscount_div = product.old_price ? `<span class="sale_present">${Math.floor((product.old_price - product.price) / product.old_price * 100)}%</span>` : '';
+
+            // Clear previous content if any
+            products_dev.innerHTML = '';
+
+            // Populate HTML with the product details
+            products_dev.innerHTML += `
+                <div class="product swiper-slide">
+                    <div class="icons">
+                        <span><i onclick="add_to_cart(${product.id}, this)" class="fa-solid fa-cart-plus"></i></span>
+                        <span><i onclick="addToWishlist(${product.id}, this)" class="fa-solid fa-heart"></i></span>
+                        <span><i class="fa-solid fa-share"></i></span>
+                    </div>
+            
+                    ${percentDiscount_div}
+            
+                    <div class="img_product">
+                        <img src="${product.img}" alt="">
+                        <img class="img_hover" src="${product.img_hover}" alt="">
+                    </div>
+                    <h3 class="name_product"><a href="#">${product.}</a></h3>
+            
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="price">
+                        <p><span>${product.price}EGP</span></p>
+                        ${old_price_paragraph}
+                    </div>
+                </div>`;
+        } else {
+            // Handle case where product with given id is not found
+            console.error(`Product with id ${productId} not found.`);
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching or parsing data: ', error);
+    });
+    </script>
+</body>
+</html>

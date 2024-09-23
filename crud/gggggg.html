@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path Input Example</title>
+</head>
+<body>
+    <form>
+        <label for="img">Enter Path:</label>
+        <input type="text" id="img" name="pathInput">
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+       let arr = ['apple', 'banana', 'cherry'];
+
+        for (let fruit of arr) {
+            console.log(fruit); // print    apple   banana   cherry
+        }
+        for (let fruit in arr) {
+            console.log(fruit); // print  0, 1 ,2
+        }
+
+        let obj = { a: 1, b: 2, c: 3 };
+
+        for (let key in obj) {
+            console.log(key); // print a ,b , c
+            console.log(obj[key]); // print 1 ,2 , 3
+        }
+        for (let key of obj) {
+            console.log(key);  
+            console.log(obj[key]); 
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!--font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <title>TOPICO</title>
+</head>
+
+<body>
+    <!-- Header----------------------------------------
+     ---------------------------------------------------->
+    <header>
+        <div class="container top-nav">
+            <a href="home.html" class="logo"><img src="img/logo-black.png" alt=""></a>
+            <form action="" class="search">
+                <input type="search" placeholder="Search For Products...">
+                <button type="submit">Search</button>
+            </form>
+            <div style="color: var(--dark-color);
+                        padding: 10px 20px;
+                        margin-left: 10px;
+                        border-radius: 5px;
+                        display: flex;
+                        gap: 10px;">
+                <div class="wishlist-header">
+                    <div class="icon-wishlist" onclick="openWishlist()">
+                        <i class="fa-solid fa-heart"></i>
+                        <span class="fav-count-item">0</span>
+                    </div>
+                </div>
+
+                <div class="cart-header">
+                    <div class="icon-cart" onclick="openCart()">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="count-item">0</span>
+                    </div>
+                    <div class="total-price">
+                        <p>my Cart:</p>
+                        <p class="price_cart_Head">0EGP</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+        <nav>
+            <div class="links container">
+                <i onclick=" open_menu()" class="fa-solid fa-bars btn_open_menu"></i>
+                <ul id="menu">
+                    <span onclick="close_menu()" class="bg-overlay"></span>
+                    <i onclick="close_menu()" class="fa-regular fa-circle-xmark btn_close_menu"></i>
+                    <img class="logo_menu" src="img/logo-black.png" alt="">
+                    <li class="active"><a href="home.html"><b>Home</b></a></li>
+                    <li><a href=""><b>All Products</b></a></li>
+                    <li><a href="#contact"><b>About Us</b></a></li>
+                    <li><a href="#contact"><b>Contact</b></a></li>
+                </ul>
+                <div class="login_signUp">
+                    <a href="login.html" onclick="logout()">Log Out<i class="fa-solid fa-right-to-bracket"></i></a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <!--------------------------------------cart
+    ------------------------------------------------------------------------------------------------->
+    <div class="cart ">
+        <div class="top_cart">
+            <h3>My Cart <span class="count_item_cart">(0item in cart)</span></h3>
+            <span class="close_cart" onclick="closeCart()"><i class="fa-solid fa-x"></i></span>
+        </div>
+        <div class="items_in_cart">
+
+        </div>
+
+
+        <div class="bottom_cart">
+            <div class="total">
+                <p>Cart Sub Total</p>
+                <p class="price_cart_total">0LE</p>
+            </div>
+            <div class="button_cart">
+                <a href="checkout.html" class="btn_cart" onclick="goToCheckout()">Proceed to Checkout</a>
+                <button class="btn_cart trans_bg">Shop More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wishlist">
+        <div class="top_wishlist">
+            <h3>My Wishlist <span class="count_item_wishlist">(0 items)</span></h3>
+            <span class="close_wishlist" onclick="closeWishlist()"><i class="fa-solid fa-x"></i></span>
+        </div>
+        <div class="items_in_wishlist">
+            <!-- Wishlist items will be dynamically added here -->
+        </div>
+        <div class="bottom_wishlist">
+            <button class="btn_clear_all" onclick="clearWishlist()">Clear All</button>
+        </div>
+    </div>
+
+    <div class="top_page">
+        <div class="container">
+            <h1>Experience the Future of Technology with Our Topico.
+            </h1>
+            <p>Find everything you need to transform your home into a smart, connected space. Our Topico store offers a
+                wide range of devices to fit your needs
+            </p>
+        </div>
+    </div>
+
+
+    <section class="all_products">
+        <div class="container">
+            <span onclick="open_close_filter()" class="btn_filter">
+                filter<i class="fa-solid fa-filter"></i>
+            </span>
+
+            <div class="filter">
+                <h2>Filter</h2>
+
+                <div class="filter_item ">
+                    <h4>Category</h4>
+                    <div id="Category" class="content">
+
+                    </div>
+                </div>
+
+                <div class="filter_item">
+                    <h4>Brands</h4>
+                    <div id="brand" class="content">
+                    </div>
+                </div>
+
+                
+                
+            </div>
+            <div id="products_dev" class="products_dev">
+
+            </div>
+        </div>
+
+        <div class="pagination">
+            <span class="btn_page prev"><i class="fa-solid fa-backward-step"></i></span>
+            <a href="#"><span class="num_page avtive">1</span></a>
+            <a href="#"><span class="num_page ">2</span></a>
+            <a href="#"><span class="num_page ">3</span></a>
+
+            <span class="btn_page next"><i class="fa-solid fa-forward-step"></i></span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="big_row">
+                <i class="fa-solid fa-headset"></i>
+                <img src="img/logo-white.png">
+                <div class="hotline">
+                    <div class="text" id="contact">
+                        <h5>Hotline Free 24/24:</h5>
+                        <h6>+201068767403</h6>
+                    </div>
+                </div>
+                <p>
+                    Our application is designed to streamline and enhance your experience with household 
+                    appliances, making it easier than ever to monitor, control, and maintain all your devices 
+                    from one convenient platform. With a user-friendly interface and cutting-edge technology, 
+                     our mission is to simplify your life by providing a seamless and efficient way to manage 
+                     your home, ensuring comfort, convenience, and peace of mind. Join us in revolutionizing 
+                     the way you interact with your home appliances.
+               </p>
+            </div>
+            <div class="row">
+                <h4>FAQs & Help</h4>
+                <div class="links">
+                    <a href="#">F.A.Q.'S</a>
+                    <a href="#">Oredering Tracking</a>
+                    <a href="#">contacts</a>
+                    <a href="#">Events</a>
+                    <a href="#">Help Center</a>
+                </div>
+            </div>
+            <div class="row">
+                <h4>Shipping & Delivery</h4>
+                <div class="links">
+                    <a href="#">Delivery Information</a>
+                    <a href="#">Discount</a>
+                    <a href="#">Payment & Shipping</a>
+                    <a href="#">Estimated Delivery Time</a>
+                    <a href="#">Shipping Guide</a>
+                </div>
+            </div>
+
+            <div class="row">
+                <h4>Information</h4>
+                <div class="links">
+                    <a href="#">Popular</a>
+                    <a href="#">Our service</a>
+                    <a href="#">Your Account</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+        <div class="back_to_top">
+            <p>Back To Top</p>
+        </div>
+        <div class="bottom_footer">
+            <div class="container">
+                <p>Copy Right &copy; <span>TOPICO</span> All Rights Reserved</p>
+                <div class="payment_img">
+                    <img src="img/payment-1.png">
+                    <img src="img/payment-2.png">
+                    <img src="img/payment-3.png">
+                    <img src="img/payment-4.png">
+                </div>
+            </div>
+        </div>
+    </footer>
+<script>
+    function logout() {
+    localStorage.removeItem('currentUser'); // Remove current user data
+    window.location.href = 'login.html'; // Redirect to the login page
+}
+</script>
+
+    <script src="js/main.js"></script>
+    <script src="js/all_products.js"></script>
+    <script src="crud/js/js.js"></script>
+</body>
+
+</html>
